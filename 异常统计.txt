@@ -1,0 +1,34 @@
+InputMismatchException
+输入类型不匹配异常（Scanner类，要求一个int类型的数据，打了一个String类型的数据）
+
+StringIndexOutOfBoundsException
+字符串索引越界异常（String类中，所查询的索引大于原数组的长度）
+
+NullPointerException
+空指针异常（对象都不存在的时候调方法），只要为对象，开发原则就是“必须进行null判断”
+自动拆装箱时注意判断是否为空对象
+
+NumberFormatException
+格式化有问题，字母串转为Integer类型时的异常，数据类型不符合。
+
+NoSuchElementException
+没有这样的元素异常，既查找的时候越界，在迭代器查找前尽量确定一个集合的长度
+
+ClassCastException
+类型错误
+
+ConcurrentModificationException
+并发修改异常：有迭代器遍历集合时，用集合修改集合。或者用增强for遍历集合时，用集合修改集合。
+
+
+IllegalArgumentException
+非法参数异常，方法传递了一个不正确的参数
+
+
+BindException
+Address already in use: JVM_Bind
+
+
+
+SocketException
+Software caused connection abort: recv failed

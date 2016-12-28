@@ -1,0 +1,3 @@
+我也遇到这样的问题，你可以在Android studio里面直接编辑.9图，Android studio的UI编辑能力比Eclipse要严格得多
+点击show bad patches，如果存在bad patches就编译不过
+你需要在Android Studio里面修改好.9图

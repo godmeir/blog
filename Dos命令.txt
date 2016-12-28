@@ -1,0 +1,3 @@
+netstatÃüÁî
+ipconfig
+ping ip

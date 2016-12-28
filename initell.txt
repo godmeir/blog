@@ -1,0 +1,7 @@
+http://idea.iteblog.com/key.php
+
+.9图的as最优化问题
+apptOptions{
+	cruncherEnable=false
+	useNewCruncher = false
+}
