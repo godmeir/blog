@@ -100,6 +100,29 @@ localStorage.setItem("nm","1234");
 
 ###2. Cookies方式
 cookie数据始终在同源的http请求中携带，cookie在浏览器和服务器之间进行传递，cookie的数据还有path的概念，可以限制cookies只属于某个路径下，cookie数据不能超过4k，同时因为每次http请求都会携cookie，所以cookie只适合保存很小的数据，如会话标识。
+
+
+---
+---
+cookie，localStorage，sessionStorage都可以实现客户端存储，三者的区别有哪些了？
+
+cookie作为最早期的被设计web浏览器存储少量数据，从底层看，它是作为http协议的一种扩展实现。cookie数据会自动在web浏览器和web服务器之间传输数据。
+
+cookie有效期：cookie默认有效期非常短暂，存在于web浏览器会话期间，当浏览器关闭，cookie也就消失了。如果要延长cookie的有效期，可以设置max-age属性（单位秒）
+
+cookie作用域：cookie作用域是通过domain文档源和path文档路径来确定的。默认情况下，cookie和创建它的web页面有关，并对web页面和该web页面同目录或者子目录的其他web页面可见。当设置path="/"，它的作用域就变成文档源级别的了。
+
+localStorage, sessionStorage是HTML5中新增的web存储的功能，它解决了客户端存储的一些缺点，并提供更强大的功能和操作API。
+
+localStorage有效期：永不失效，除非web应用主动删除。
+
+localStorage作用域：localStorage的作用域是限定在文档源级别的。文档源通过协议、主机名以及端口三者来确定。
+
+sessionStorage有效期：sessionStorage的有效期是和存储数据脚本所在的最顶层的窗口或者是浏览器标签是一样的，一旦窗口或者标签页被永久关闭了，存储的数据也就失效了。
+
+sessionStorage作用域：sessionStorage的作用域也是限定在文档源级别。但需要注意的是，如果相同文档源的页面渲染在不同的标签中，sessionStorage的数据是无法共享的。
+
+除了上述列举的，cookie和localStorage、sessionStorage在存储大小的限制也不一样， 由于每个浏览器的实现标准都不一样，只说一下RFC 2965推荐标准（浏览器保存cookie不超过300个，为每个服务器保存的cookie不超过20个，每个cookie大小不超过4KB）。localStorage、sessionStorage设置值时可以达到8M.
  
 
 ###3.Session与Cookie的区别与联系

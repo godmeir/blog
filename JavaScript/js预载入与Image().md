@@ -50,19 +50,16 @@ ie8及以下、opera 不支持onerror事件
 
 
 ###eg:
+```
 <pre><code>
-    //预加载图片
-    function preLoadImgs()
-    {
-        alert('图片加载中请稍等......');
-        for(var i=1;i<=16;i++){
-            Imgs[i]=new Image();
-            downloadImage(i);
-        }
-    }
+   modeImgCache = (function () {
+
+    var Count =16;
+    var Imgs = new Array(Count);
+    var ImgLoaded =0;
 
     //加载单个图片
-    function downloadImage(i)
+    this.downloadImage = function (i)
     {
         var imageIndex = i; //图片以1开始
         Imgs[i].src = "img/mode_bg_"+imageIndex+".png";
@@ -73,21 +70,32 @@ ie8及以下、opera 不支持onerror事件
     function validateImages(i){
         if (!Imgs[i].complete)
         {
-            window.setTimeout('downloadImage('+i+')',200);
+            setTimeout('downloadImage('+i+')',200);
         }
         else if (typeof Imgs[i].naturalWidth != "undefined" && Imgs[i].naturalWidth == 0)
         {
-            window.setTimeout('downloadImage('+i+')',200);
+            setTimeout('downloadImage('+i+')',200);
         }
         else
         {
             ImgLoaded++
-            if(ImgLoaded == Count)
-            {
-                document.getElementById('BtnStart').disabled=false;
-                document.getElementById('BtnStop').disabled=false;
-                alert('图片加载完毕！');
-            }
         }
     }
+    //预加载图片
+    function preLoadImgs()
+    {
+        for(var i=1;i<=16;i++){
+            Imgs[i]=new Image();
+            try {
+                downloadImage(i);
+            }catch (e){
+                console.log(e);
+            }
+
+        }
+    };
+    preLoadImgs();
+    return Imgs;
+})()
 </code></pre>
+```

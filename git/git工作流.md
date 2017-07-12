@@ -1,0 +1,10 @@
+###1:集中式工作流
+
+一个master
+
+###2：功能分支工作流
+
+
+规定往公共分支（release、master、develop）进行push或者merge的权限只有项目负责人拥有就行了吧。gitlab里有个merge request，基本等于github的pull request的单仓库版。虽然这样项目负责人工作量看起来比较大，但只要规定开发者把自己的feature合并到develop时，都要先从develop那边合并到自己的feature分支，自己先合并了，然后再发送merge request就行。这样一来项目负责人只要确保merge时没有conflict，而不需要负责处理conflict。当然merge成功了之后负责人还要负责执行自动回归测试。如果项目负责人把release合并到master时有人发了个新的merge request（to release），项目负责人无视或拒绝这个request就行了。然后合并到master后，项目负责人直接在master上打标签，自动化发布就冲着master上新打的标签发布（没用过jenkins不过应该有这功能吧？）。总结就是让项目负责人当做一个人肉互斥锁来避免题主说的情况
+
+
