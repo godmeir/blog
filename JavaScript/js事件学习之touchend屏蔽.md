@@ -1,0 +1,6 @@
+###如何在touchmove结束时不触发touchend
+
+
+在移动端页面进行优化时，一般使用touch事件替代鼠标相关事件，用的较多的是使用touchend事件替代PC端的click和mouseup事件。
+
+但是，touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend事件，造成误操作。

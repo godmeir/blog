@@ -1,0 +1,39 @@
+1：ES6入门之Symbol
+http://www.cnblogs.com/sker/p/5474591.html
+
+2：for-of等遍历的理解与使用时间，设置各种转换为ES5
+jQuery.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
+
+3：迭代器对象 
+
+4：Node.js与io.js那些事儿
+http://www.infoq.com/cn/articles/node-js-and-io-js/
+
+5:什么是生成器？Generators
+
+6:，生成器不是线程,它和调用者处于同一线程中，拥有确定的连续执行顺序，永不并发。
+与系统线程不同的是，生成器只有在其函数体内标记为 yield 的点才会暂停。
+
+7：生成器是迭代器！ 
+
+8：迭代器贯穿 ES6 的始终，它是数据和循环的新标准。
+
+
+9：异步 API 拥有错误处理规则，不支持异常处理。不同的 API 有不同的规则，大多
+数的错误规则是默认的；在有些 API 里，甚至连成功提示都是默认的。
+
+
+10：更深入地讲解生成器的文章
+http://jlongster.com/A-Study-on-Solving-Callbacks-with-JavaScript-Generators
+
+
+10：标签模板（没看懂）
+http://blog.csdn.net/blog_szhao/article/details/51792868
+
+11：解构值不是对象、数组或迭代器 ，当你尝试解构 null 或 undefined 时，你会得到一个类型错误：然而，你可以解构其它原始类型，例如：布尔值、数值、字符串，但是你将得到 undefined：
+12：，使用了块语句的箭头函数不会自动返回值，你需要使用 return 语句将所需值
+返回
+
+13：symbol
+
+14：Set 支持的所有操作  Set 不能提供的则是索引 Set 的数据存储结构专门为一种操作作了速度优化：包含性检测。
